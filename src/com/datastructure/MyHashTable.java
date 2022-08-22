@@ -1,16 +1,14 @@
 package com.datastructure;
 
-public class MyHashTable<K,V> {
+public class MyHashTable<K, V> {
     MyMapNode head;
     MyMapNode tail;
-
-    //	  Purpose: Method to get the word from Linked List.
+    // Purpose: Method to get the word from Linked List.
     public V get(K word) {
         MyMapNode<K, V> myNode = searchNode(word);
         return (myNode == null) ? null : myNode.getValue();
     }
-
-    //	  Purpose: Method to search word from Linked List.
+    // Purpose: Method to search word from Linked List.
     public MyMapNode<K, V> searchNode(K word) {
         MyMapNode<K, V> currentNode = head;
         int position = 0;
@@ -23,10 +21,10 @@ public class MyHashTable<K,V> {
         }
         return currentNode;
     }
-    /* Purpose: Method to add key and value to hash table.
-     *  key: word to be added.
-     *  value: frequency of word. */
-
+    /*
+     * Purpose: Method to add key and value to hash table. key: word to be
+     * added. value: frequency of word.
+     */
     public void add(K key, V value) {
         MyMapNode<K, V> myNode = searchNode(key);
         if (myNode == null) {
@@ -34,11 +32,10 @@ public class MyHashTable<K,V> {
             this.append(myNode);
         } else
             myNode.setValue(value);
-
     }
-	 /* Purpose: Method to append value to Linked List.
- 		myNode: value to append.*/
-
+    /*
+     * Purpose: Method to append value to Linked List. myNode: value to append.
+     */
     private void append(MyMapNode<K, V> myNode) {
         if (this.head == null)
             this.head = myNode;
@@ -49,12 +46,10 @@ public class MyHashTable<K,V> {
             this.tail = myNode;
         }
     }
-
     @Override
     public String toString() {
-        return "MyLinkedListNodes:\n" + head ;
+        return "MyLinkedListNodes:\n" + head;
     }
-
     /* create printNodes method this is print head */
     public void printNodes() {
         System.out.println("My nodes: " + head);

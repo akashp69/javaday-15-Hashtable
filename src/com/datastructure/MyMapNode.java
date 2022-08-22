@@ -3,16 +3,13 @@ public class MyMapNode<K,V> {
     K key;
     V value;
     MyMapNode<K, V> next;
-    /* Create constructor name as MyMapNode and passing key and value here */
+
 
     public MyMapNode(K key, V value) {
         this.key = key;
         this.value = value;
         next = null;
     }
-    /* we use getter and setter 1st get key and set key getkey is return
-     *  key setkey is set the key */
-
     public K getKey() {
         return key;
     }
@@ -20,9 +17,7 @@ public class MyMapNode<K,V> {
         this.key = key;
 
     }
-    /**
-     * here we used getvalue method and setvalue set is set the value and get
-     * value is return value */
+
     public V getValue() {
         return value;
     }
@@ -35,7 +30,6 @@ public class MyMapNode<K,V> {
     public void setNext(MyMapNode<K, V> next) {
         this.next = (MyMapNode<K, V>) next;
     }
-
     @Override
     public String toString() {
         StringBuilder nodeString = new StringBuilder();
@@ -46,4 +40,3 @@ public class MyMapNode<K,V> {
         return nodeString.toString();
     }
 }
-
